@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../services/api.service';
-
+import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
@@ -12,7 +12,11 @@ export class DialogComponent implements OnInit {
   freshnessList = ["Brand New", "Second Hand", "Refurbished"];
   productForm !: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private api:ApiService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private api:ApiService,
+    private dialogRef: MatDialogRef<DialogComponent>// MatDialogRef e component verilmesi gerekir(type verilmesi gerekir)
+    ) { }
 
   ngOnInit(): void {
     this.productForm = this.formBuilder.group({
@@ -31,6 +35,8 @@ export class DialogComponent implements OnInit {
       .subscribe({
         next:(res)=>{
           alert("Product added successfully")
+          this.productForm.reset();
+          this.dialogRef.close('save')// form save edildikten sonra formun kapatılmasını sağlar
         },
         error:()=> {
           alert("Error while adding the product")
@@ -39,4 +45,6 @@ export class DialogComponent implements OnInit {
       })
     }
   }
+
+
 }
