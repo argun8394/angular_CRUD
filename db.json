@@ -1,0 +1,23 @@
+{
+  "productList": [
+    {
+      "productName": "iphone13",
+      "category": "Electronic",
+      "freshness": "Brand New",
+      "price": 9999,
+      "comment": "This has new status",
+      "date": "2022-06-05T21:00:00.000Z",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

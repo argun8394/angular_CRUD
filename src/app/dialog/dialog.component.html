@@ -4,12 +4,12 @@
   <form [formGroup]="productForm">
     <mat-form-field appearance="outline">
       <mat-label>Product Name</mat-label>
-      <input matInput placeholder="Name">
+      <input matInput formControlName="productName" placeholder="Name">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Product Category</mat-label>
-      <mat-select placeholder="Category">
+      <mat-select formControlName="category" placeholder="Category">
         <mat-option value="Fruits">Fruits</mat-option>
         <mat-option value="Vegetables">Vegetables</mat-option>
         <mat-option value="Electronic">Electronic</mat-option>
@@ -18,13 +18,13 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Choose a date</mat-label>
-      <input matInput [matDatepicker]="picker">
+      <input matInput formControlName="date" [matDatepicker]="picker">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <label><h1>Product Status</h1></label>
-  <mat-radio-group  class="example-radio-group">
+  <mat-radio-group formControlName="freshness" class="example-radio-group">
     <mat-radio-button class="example-radio-button" *ngFor="let fresh of freshnessList" [value]="fresh">
       {{fresh}}
     </mat-radio-button>
@@ -32,12 +32,12 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Price</mat-label>
-      <input matInput type="number" placeholder="Price">
+      <input matInput formControlName="price" type="number" placeholder="Price">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Comment</mat-label>
-      <textarea matInput placeholder="comment..."></textarea>
+      <textarea matInput formControlName="comment" placeholder="comment..."></textarea>
     </mat-form-field>
   </form>
 
@@ -45,5 +45,5 @@
 
 <div mat-dialog-action [align]="'end'">
   <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-  <button style="margin-left: 8px;" mat-raised-button color="primary">Save</button>
+  <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addProduct()">Save</button>
 </div>
