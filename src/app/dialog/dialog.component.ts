@@ -69,7 +69,7 @@ export class DialogComponent implements OnInit {
       next:(res)=>{
         alert("Product updated successfully");
         this.productForm.reset();
-        this.dialogRef.close('updated');
+        this.dialogRef.close('update');
       },
       error:()=> {
         alert("Error while updateding the product!!")

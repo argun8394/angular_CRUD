@@ -71,6 +71,7 @@ export class AppComponent implements OnInit {
     next:()=>{
       alert("Product deleted successfully");
       this.getAllProducts();
+
     },
     error:()=> {
       alert("Error while deleting the product");
