@@ -1,7 +1,7 @@
 {
   "productList": [
     {
-      "productName": "iphone13",
+      "productName": "iphone13sda",
       "category": "Electronic",
       "freshness": "Brand New",
       "price": 9999,
@@ -26,6 +26,24 @@
       "comment": "this is not new",
       "date": "2022-06-14T21:00:00.000Z",
       "id": 3
+    },
+    {
+      "productName": "iphone14",
+      "category": "Electronic",
+      "freshness": "Brand New",
+      "price": 9999,
+      "comment": "This has new status",
+      "date": "2022-06-05T21:00:00.000Z",
+      "id": 4
+    },
+    {
+      "productName": "iphone14",
+      "category": "Electronic",
+      "freshness": "Brand New",
+      "price": 9999,
+      "comment": "This has new status",
+      "date": "2022-06-05T21:00:00.000Z",
+      "id": 5
     }
   ],
   "comments": [
